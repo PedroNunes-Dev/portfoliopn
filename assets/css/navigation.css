@@ -181,21 +181,40 @@ a
   -webkit-backdrop-filter: blur(10px);
 }
 
-#social
+#social, #social-modal
 {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
 
-#social i
+#social i, #social-modal i
 {
   font-size: 2rem;
   transition: all .2s;
 }
 
-#social i:hover
+#social i:hover, #social-modal i:hover
 {
   color: var(--details);
   transform: rotate(360deg);
 }
+
+/* MODAL */
+.modal-content
+{
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-header, .modal-footer
+{
+  border: none;
+}
+
+#social-modal a:hover
+{
+  background: none;
+}
+

@@ -40,7 +40,35 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About me</a></li>
-        <li><a href="">Contact</a></li>
+        <li>
+          <!-- <a href="">Contact</a> -->
+          <!-- Button trigger modal -->
+          <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Contact
+          </a>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Disponível através desses canais:</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                  <ul id="social-modal">
+                    <li><a href="https://wa.me/qr/OZWPJVZZLJ2WG1" target="blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.instagram.com/pedronunesdev/" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="mailto:adm.pedronunes@hotmail.com?subject=Projeto novo" target="blank"><i class="far fa-envelope-open"></i></a></li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -101,7 +129,7 @@
             <i class="fab fa-php"></i>
             <div class="card-body">
               <h5 class="card-title">PHP</h5>
-              <p class="card-text">Iniciei os estudos nesssa linguagem a pouco tenho, mas estou praticando bastante com criação de 
+              <p class="card-text">Iniciei os estudos nesssa linguagem a pouco tempo, mas estou praticando bastante com criação de 
                 aplicações WEB com estrutura MVC e conexões com banco de dados (CRUD).
               </p>
             </div>
@@ -123,7 +151,9 @@
             <i class="fas fa-database"></i>
             <div class="card-body">
               <h5 class="card-title">Banco de dados</h5>
-              <p class="card-text">Base sólida em administração de banco de dados, com certificação na Escola SENAI - DF.</p>
+              <p class="card-text">Cursando administrador de banco de dados, com certificação na Escola SENAI - DF. 
+                O intuito é criar uma base sólida para otimizar a integração client side com server side.
+              </p>
             </div>
           </div>
         </div>
@@ -174,7 +204,7 @@
             <div class="card-body">
               <h5 class="card-title">App lista de tarefas</h5>
               <p class="card-text">Projeto criado em PHP durante o cruso de desenvolvimento web Completo, ministrado por Jorge Sant Ana.</p>
-              <a href="http://applistatarefa2.epizy.com/" target="blank">→ Acessar aplicativo</a>
+              <a href="http://applistatarefa2.epizy.com/" target="blank">→ Abrir aplicativo</a>
             </div>
           </div>
         </div>
