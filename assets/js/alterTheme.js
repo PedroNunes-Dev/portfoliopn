@@ -8,14 +8,14 @@ const getStyle = (element, style) =>
 
 const initialColors = {
     bg: getStyle(html, '--bg'),
-    colorText: getStyle(html, '--text'),
-    details: getStyle(html, '--details')
+    text: getStyle(html, '--text'),
+    linearBlack: getStyle(html, '--linear-black'),
 }
 
 const lightMode = {
-    bg: "#FCFCFC",
-    colorText: "#181818",
-    details: "#0077FF"
+    bg: "#dfdbdb",
+    text: "#181818",
+    linearBlack: "#dfdbdb"
 }
 
 const transformKey = key => "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
