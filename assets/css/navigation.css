@@ -62,7 +62,7 @@ a
   color: var(--text);
 }
 
-#menu a:active{
+#menu li.active a{
   background: var(--details);
   color: var(--text);
 }

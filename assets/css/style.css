@@ -44,6 +44,20 @@ body
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
+
+  animation:
+      bounce 350ms
+      alternate infinite
+      cubic-bezier(.2, .65, .6, 1);
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
 }
 
 .button::before
@@ -70,6 +84,8 @@ body
 {
   height: 375%;
 }
+
+
 
 /* LOADER */
 .card-loading
