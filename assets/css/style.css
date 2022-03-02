@@ -150,18 +150,14 @@ body
 .card
 {
   border: none;
-  transition: .2s;
   background: linear-gradient(175deg, var(--linear-black) 45%, var(--color-logo) 90%);
 }
-.card:hover
-{
-  transform: translateY(10px);
-}
+
 .card i
 {
   text-align: center;
   font-size: 6rem;
-  transition: .2s;
+  transition: all .2s;
 }
 .card i:hover
 {
