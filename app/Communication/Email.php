@@ -1,50 +1,56 @@
 <?php
 
-/**
-     * Variáveis do fomulário
-     */
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $mensagem = $_POST['mensagem'];
-    $result = '';
+namespace App\Communication;
 
-    /**
-     * E-mails para quem será enviado os formulários
-     */
-    $address = "adm.pedronunes@gmail.com";
-    $subject = "Contato pelo site";
+require_once "../../vendor/autoload.php";
 
-    /**
-     * Corpo do email
-     */
-    $body = "
-    <html>
-        <p>Nome: <b>$nome</b></p>
-        <p>E-mail: <b>$email</b></p>
-        <p>Telefone: <b>$telefone</b></p>
-        <p>Mensagem: <b>$mensagem</b></p>
-    </html>
-    ";
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
+$mensagem = $_POST['mensagem'];
 
-    /**
-     * Garantir que os caracteres sejam exibidos corretamente
-     */
-    $headers  = "MIME-Version: 1.0\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\n";
-    $headers .= "From: $nome <$email>";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    /**
-     * Send
-     */
-    if (mail($address, $subject, $body, $headers)) {
-        $result = 'E-mail enviado com sucesso!';
-    }else{
-        $result = 'E-mail não pode ser enviado!';
-    }
+$mail = new PHPMailer();
+$mail->isSMTP();
+$mail->Mailer = "smtp";
 
-    echo "<meta http-equiv='refresh' content='10;URL=/index.html'>";
+//Credenciais de acesso ao SMTP
+//$mail->SMTPDebug = 1;
+$mail->CharSet = 'UTF-8';
+$mail->SMTPAuth = true;
+$mail->SMTPSecure = "tls";
+$mail->Port = 587;
+$mail->Host = "smtp.gmail.com";
+$mail->Username = "seu e-mail do gmail para disparo";
+$mail->Password = "senha do e-mail de disparo";
 
+//Remetente | Destinatários | Conteúdo do email
+$mail->isHTML(true);
+$mail->AddAddress("adm.pedronunes@hotmail.com");
+$mail->SetFrom("adm.pedronunes@gmail.com",$nome);
+//$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");
+//$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
+$mail->Subject = "Contato pelo Site";
+$content = "<html>
+                <p>Nome: <b>$nome</b></p>
+                <p>E-mail: <b>$email</b></p>
+                <p>Telefone: <b>$telefone</b></p>
+                <p>Mensagem: <b>$mensagem</b></p>
+            </html>
+";
+
+//Envio do e-mail
+$mail->MsgHTML($content);
+
+if(!$mail->send()){
+    echo "Mensagem não pode ser enviado!";
+    echo "<meta http-equiv='refresh' content='5;URL=/index.html'>";
+}else{
+    echo "Mensagem enviada com sucesso!";
+    echo "<meta http-equiv='refresh' content='5;URL=/index.html'>";
+}
 
 ?>
 
