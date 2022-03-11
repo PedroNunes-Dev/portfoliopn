@@ -23,8 +23,8 @@ $mail->SMTPAuth = true;
 $mail->SMTPSecure = "tls";
 $mail->Port = 587;
 $mail->Host = "smtp.gmail.com";
-$mail->Username = "adm.pedronunes@gmail.com";
-$mail->Password = "malupe281719";
+$mail->Username = "seu e-mail do gmail para disparo";
+$mail->Password = "senha do e-mail de disparo";
 
 //Remetente | Destinatários | Conteúdo do email
 $mail->isHTML(true);
