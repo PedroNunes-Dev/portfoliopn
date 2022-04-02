@@ -5,6 +5,7 @@
   --lines: #8d8d8d;
   --details: #ed0101;
   --color-logo: #ed3237;
+  --color-button: #c74f4f;
   --linear-black: #181818;
 }
 
@@ -204,6 +205,15 @@ body
   color: var(--bg);
 }
 
-
-
-
+#projects a
+{
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  transition: 0.2s;
+  padding: 0 3rem;
+  border-radius: 8px;
+  background: linear-gradient(165deg, var(--details), var(--color-button), var(--color-logo));
+  color: var(--linear-black);
+  text-align: center;
+}
